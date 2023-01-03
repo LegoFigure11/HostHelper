@@ -227,6 +227,7 @@ namespace HostHelper
                                     ID = ID,
                                     NID = $"{NIDs[0]:X16}",
                                 };
+                                SessionList.Add(e);
 
                                 Color c = DefaultColor;
                                 if (SessionList.Where(e => (e.OT == OT && e.ID == ID) || e.NID == $"{NIDs[0]:X16}").Count() > AllowedEntries.Value)
@@ -244,8 +245,6 @@ namespace HostHelper
                                 Guest1OT.BackColor = c;
                                 Guest1ID.BackColor = c;
                                 Guest1NID.BackColor = c;
-
-                                SessionList.Add(e);
                             }
                             if (!Found2 && NIDs[1] is not 0)
                             {
@@ -266,6 +265,7 @@ namespace HostHelper
                                     ID = ID,
                                     NID = $"{NIDs[1]:X16}",
                                 };
+                                SessionList.Add(e);
 
                                 Color c = DefaultColor;
                                 if (SessionList.Where(e => (e.OT == OT && e.ID == ID) || e.NID == $"{NIDs[1]:X16}").Count() > AllowedEntries.Value)
@@ -283,8 +283,6 @@ namespace HostHelper
                                 Guest2OT.BackColor = c;
                                 Guest2ID.BackColor = c;
                                 Guest2NID.BackColor = c;
-
-                                SessionList.Add(e);
                             }
                             if (!Found3 && NIDs[2] is not 0)
                             {
@@ -305,6 +303,7 @@ namespace HostHelper
                                     ID = ID,
                                     NID = $"{NIDs[2]:X16}",
                                 };
+                                SessionList.Add(e);
 
                                 Color c = DefaultColor;
                                 if (SessionList.Where(e => (e.OT == OT && e.ID == ID) || e.NID == $"{NIDs[2]:X16}").Count() > AllowedEntries.Value)
@@ -322,8 +321,6 @@ namespace HostHelper
                                 Guest3OT.BackColor = c;
                                 Guest3ID.BackColor = c;
                                 Guest3NID.BackColor = c;
-
-                                SessionList.Add(e);
                             }
                             await Task.Delay(1_000);
                         }
