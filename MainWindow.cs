@@ -63,14 +63,23 @@ namespace HostHelper
         private void ButtonConnect_Click(object sender, EventArgs e)
         {
             Guest1OT.Text = string.Empty;
+            Guest1OT.BackColor = DefaultColor;
             Guest2OT.Text = string.Empty;
+            Guest2OT.BackColor = DefaultColor;
             Guest3OT.Text = string.Empty;
+            Guest3OT.BackColor = DefaultColor;
             Guest1ID.Text = string.Empty;
+            Guest1ID.BackColor = DefaultColor;
             Guest2ID.Text = string.Empty;
+            Guest2ID.BackColor = DefaultColor;
             Guest3ID.Text = string.Empty;
+            Guest3ID.BackColor = DefaultColor;
             Guest1NID.Text = string.Empty;
+            Guest1NID.BackColor = DefaultColor;
             Guest2NID.Text = string.Empty;
+            Guest2NID.BackColor = DefaultColor;
             Guest3NID.Text = string.Empty;
+            Guest3NID.BackColor = DefaultColor;
             Guest1Ban.Enabled = false;
             Guest2Ban.Enabled = false;
             Guest3Ban.Enabled = false;
