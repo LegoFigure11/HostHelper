@@ -59,10 +59,11 @@
             this.Guest3OT = new System.Windows.Forms.TextBox();
             this.ButtonConnect = new System.Windows.Forms.Button();
             this.ButtonStop = new System.Windows.Forms.Button();
-            this.ButtonClearSession = new System.Windows.Forms.Button();
+            this.ButtonManageSession = new System.Windows.Forms.Button();
             this.LabelSession = new System.Windows.Forms.Label();
             this.AllowedEntries = new System.Windows.Forms.NumericUpDown();
             this.label10 = new System.Windows.Forms.Label();
+            this.ButtonManageBanlist = new System.Windows.Forms.Button();
             this.Guest1Group.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Guest1Status)).BeginInit();
             this.Guest2Group.SuspendLayout();
@@ -363,7 +364,7 @@
             // 
             // ButtonConnect
             // 
-            this.ButtonConnect.Location = new System.Drawing.Point(12, 40);
+            this.ButtonConnect.Location = new System.Drawing.Point(12, 36);
             this.ButtonConnect.Name = "ButtonConnect";
             this.ButtonConnect.Size = new System.Drawing.Size(112, 24);
             this.ButtonConnect.TabIndex = 9;
@@ -374,7 +375,7 @@
             // ButtonStop
             // 
             this.ButtonStop.Enabled = false;
-            this.ButtonStop.Location = new System.Drawing.Point(12, 70);
+            this.ButtonStop.Location = new System.Drawing.Point(12, 62);
             this.ButtonStop.Name = "ButtonStop";
             this.ButtonStop.Size = new System.Drawing.Size(112, 24);
             this.ButtonStop.TabIndex = 10;
@@ -382,20 +383,20 @@
             this.ButtonStop.UseVisualStyleBackColor = true;
             this.ButtonStop.Click += new System.EventHandler(this.ButtonStop_Click);
             // 
-            // ButtonClearSession
+            // ButtonManageSession
             // 
-            this.ButtonClearSession.Location = new System.Drawing.Point(12, 160);
-            this.ButtonClearSession.Name = "ButtonClearSession";
-            this.ButtonClearSession.Size = new System.Drawing.Size(112, 23);
-            this.ButtonClearSession.TabIndex = 11;
-            this.ButtonClearSession.Text = "Clear Session";
-            this.ButtonClearSession.UseVisualStyleBackColor = true;
-            this.ButtonClearSession.Click += new System.EventHandler(this.ButtonClearSession_Click);
+            this.ButtonManageSession.Location = new System.Drawing.Point(12, 136);
+            this.ButtonManageSession.Name = "ButtonManageSession";
+            this.ButtonManageSession.Size = new System.Drawing.Size(112, 23);
+            this.ButtonManageSession.TabIndex = 11;
+            this.ButtonManageSession.Text = "Manage Session";
+            this.ButtonManageSession.UseVisualStyleBackColor = true;
+            this.ButtonManageSession.Click += new System.EventHandler(this.ButtonManageSession_Click);
             // 
             // LabelSession
             // 
             this.LabelSession.AutoSize = true;
-            this.LabelSession.Location = new System.Drawing.Point(12, 142);
+            this.LabelSession.Location = new System.Drawing.Point(12, 118);
             this.LabelSession.Name = "LabelSession";
             this.LabelSession.Size = new System.Drawing.Size(99, 15);
             this.LabelSession.TabIndex = 12;
@@ -403,7 +404,7 @@
             // 
             // AllowedEntries
             // 
-            this.AllowedEntries.Location = new System.Drawing.Point(91, 100);
+            this.AllowedEntries.Location = new System.Drawing.Point(91, 90);
             this.AllowedEntries.Maximum = new decimal(new int[] {
             99,
             0,
@@ -426,21 +427,32 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(12, 102);
+            this.label10.Location = new System.Drawing.Point(12, 92);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(78, 15);
             this.label10.TabIndex = 14;
             this.label10.Text = "Allow Entries:";
+            // 
+            // ButtonManageBanlist
+            // 
+            this.ButtonManageBanlist.Location = new System.Drawing.Point(12, 161);
+            this.ButtonManageBanlist.Name = "ButtonManageBanlist";
+            this.ButtonManageBanlist.Size = new System.Drawing.Size(112, 23);
+            this.ButtonManageBanlist.TabIndex = 15;
+            this.ButtonManageBanlist.Text = "Manage Banlist";
+            this.ButtonManageBanlist.UseVisualStyleBackColor = true;
+            this.ButtonManageBanlist.Click += new System.EventHandler(this.ButtonManageBanlist_Click);
             // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(638, 192);
+            this.Controls.Add(this.ButtonManageBanlist);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.AllowedEntries);
             this.Controls.Add(this.LabelSession);
-            this.Controls.Add(this.ButtonClearSession);
+            this.Controls.Add(this.ButtonManageSession);
             this.Controls.Add(this.ButtonStop);
             this.Controls.Add(this.ButtonConnect);
             this.Controls.Add(this.Guest3Group);
@@ -498,9 +510,10 @@
         private TextBox Guest3OT;
         private Button ButtonConnect;
         private Button ButtonStop;
-        private Button ButtonClearSession;
+        private Button ButtonManageSession;
         private Label LabelSession;
         private NumericUpDown AllowedEntries;
         private Label label10;
+        private Button ButtonManageBanlist;
     }
 }

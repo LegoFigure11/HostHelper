@@ -1,5 +1,6 @@
 using HostHelper.Properties;
 using HostHelper.Structures;
+using HostHelper.Subforms;
 using Newtonsoft.Json;
 using PKHeX.Core;
 using SysBot.Base;
@@ -22,9 +23,9 @@ namespace HostHelper
 
         private Color DefaultColor;
 
-        private readonly string FileName = "Banlist.json";
-        private readonly HashSet<BanlistEntry> SessionList = new();
-        private HashSet<BanlistEntry> BanList = new();
+        public readonly static string FileName = "Banlist.json";
+        public static List<BanlistEntry> SessionList = new();
+        public static List<BanlistEntry> BanList = new();
 
         public MainWindow()
         {
@@ -110,10 +111,36 @@ namespace HostHelper
             Settings.Default.Save();
         }
 
-        private void ButtonClearSession_Click(object sender, EventArgs e)
+        private void ButtonManageSession_Click(object sender, EventArgs e)
         {
-            SessionList.Clear();
-            LabelSession.Text = "Session Raiders: 0";
+            string jsonString = File.ReadAllText(FileName);
+            BanList = JsonConvert.DeserializeObject<List<BanlistEntry>>(jsonString)!;
+            if (SessionList.Count > 0)
+            {
+                var w = new ListManager(ref SessionList, "Session");
+                w.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("No users in the current session!");
+            }
+            LabelSession.Text = $"Session Raiders: {SessionList.Count}";
+        }
+
+
+        private void ButtonManageBanlist_Click(object sender, EventArgs e)
+        {
+            string jsonString = File.ReadAllText(FileName);
+            BanList = JsonConvert.DeserializeObject<List<BanlistEntry>>(jsonString)!;
+            if (BanList.Count > 0)
+            {
+                var w = new ListManager(ref BanList, "Banlist");
+                w.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("No users in the current banlist!");
+            }
         }
 
         private void Guest1Ban_Click(object sender, EventArgs e)
@@ -158,7 +185,7 @@ namespace HostHelper
         private async void Connect()
         {
             string jsonString = File.ReadAllText(FileName);
-            BanList = JsonConvert.DeserializeObject<HashSet<BanlistEntry>>(jsonString)!;
+            BanList = JsonConvert.DeserializeObject<List<BanlistEntry>>(jsonString)!;
             if (!SwitchConnection.Connected)
             {
                 try

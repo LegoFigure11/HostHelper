@@ -1,6 +1,6 @@
 ﻿namespace HostHelper.Structures
 {
-    internal class BanlistEntry
+    public class BanlistEntry
     {
         public string? OT { get; set; }
         public string? ID { get; set; }
