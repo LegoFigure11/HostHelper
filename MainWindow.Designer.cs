@@ -61,12 +61,15 @@
             this.ButtonStop = new System.Windows.Forms.Button();
             this.ButtonClearSession = new System.Windows.Forms.Button();
             this.LabelSession = new System.Windows.Forms.Label();
+            this.AllowedEntries = new System.Windows.Forms.NumericUpDown();
+            this.label10 = new System.Windows.Forms.Label();
             this.Guest1Group.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Guest1Status)).BeginInit();
             this.Guest2Group.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Guest2Status)).BeginInit();
             this.Guest3Group.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Guest3Status)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AllowedEntries)).BeginInit();
             this.SuspendLayout();
             // 
             // InputSwitchIP
@@ -398,11 +401,44 @@
             this.LabelSession.TabIndex = 12;
             this.LabelSession.Text = "Session Raiders: 0";
             // 
+            // AllowedEntries
+            // 
+            this.AllowedEntries.Location = new System.Drawing.Point(91, 100);
+            this.AllowedEntries.Maximum = new decimal(new int[] {
+            99,
+            0,
+            0,
+            0});
+            this.AllowedEntries.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.AllowedEntries.Name = "AllowedEntries";
+            this.AllowedEntries.Size = new System.Drawing.Size(33, 23);
+            this.AllowedEntries.TabIndex = 13;
+            this.AllowedEntries.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(12, 102);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(78, 15);
+            this.label10.TabIndex = 14;
+            this.label10.Text = "Allow Entries:";
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(638, 192);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.AllowedEntries);
             this.Controls.Add(this.LabelSession);
             this.Controls.Add(this.ButtonClearSession);
             this.Controls.Add(this.ButtonStop);
@@ -424,6 +460,7 @@
             this.Guest3Group.ResumeLayout(false);
             this.Guest3Group.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Guest3Status)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AllowedEntries)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -463,5 +500,7 @@
         private Button ButtonStop;
         private Button ButtonClearSession;
         private Label LabelSession;
+        private NumericUpDown AllowedEntries;
+        private Label label10;
     }
 }

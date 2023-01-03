@@ -202,7 +202,7 @@ namespace HostHelper
                                 };
 
                                 Color c = DefaultColor;
-                                if (SessionList.Where(e => (e.OT == OT && e.ID == ID) || e.NID == $"{NIDs[0]:X16}").Any())
+                                if (SessionList.Where(e => (e.OT == OT && e.ID == ID) || e.NID == $"{NIDs[0]:X16}").Count() > AllowedEntries.Value)
                                 {
                                     c = Color.Gold;
                                     Guest1Status.Image = Resources.cross;
@@ -241,7 +241,7 @@ namespace HostHelper
                                 };
 
                                 Color c = DefaultColor;
-                                if (SessionList.Where(e => (e.OT == OT && e.ID == ID) || e.NID == $"{NIDs[1]:X16}").Any())
+                                if (SessionList.Where(e => (e.OT == OT && e.ID == ID) || e.NID == $"{NIDs[1]:X16}").Count() > AllowedEntries.Value)
                                 {
                                     c = Color.Gold;
                                     Guest2Status.Image = Resources.cross;
@@ -280,7 +280,7 @@ namespace HostHelper
                                 };
 
                                 Color c = DefaultColor;
-                                if (SessionList.Where(e => (e.OT == OT && e.ID == ID) || e.NID == $"{NIDs[2]:X16}").Any())
+                                if (SessionList.Where(e => (e.OT == OT && e.ID == ID) || e.NID == $"{NIDs[2]:X16}").Count() > AllowedEntries.Value)
                                 {
                                     c = Color.Gold;
                                     Guest3Status.Image = Resources.cross;
